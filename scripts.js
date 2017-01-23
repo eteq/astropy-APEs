@@ -27,7 +27,7 @@ function populateToc(div, responsejson) {
         entry = responsejson[i];
         reres = apere.exec(entry['name']);
         if (reres) {
-            path = entry['path'];
+            path = entry['html_url'];
             apenum = reres[1];
 
             var contentreq = new XMLHttpRequest();
