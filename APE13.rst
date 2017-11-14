@@ -40,13 +40,14 @@ Background/Terminology
 One of the key basic operations necessary for any astronomical data analysis is
 the association of “pixels” with their “real-world” coordinates (and vice
 versa). While this concept has existed essentially for as long as computers
-have been used on astronomical data, the FITS WCS standard (Calabretta &
-Greisen, 2002, A&A 395, 1077) gave this concept a name: “World Coordinate
-System” (WCS). Because of this, “WCS” and “FITS-WCS” are often treated
-synonymously, but the concept is of broader applicability, as evidenced by the
-existence of serialization formats and Python packages that perform this task
-(e.g., gWCS, pyast). Hence, we use the term “WCS” to refer to the broad concept
-of WCS, rather than the specific FITS-WCS representation and implementation.
+have been used on astronomical data, the FITS WCS standard (`Calabretta &
+Greisen, 2002, A&A 395, 1077 <http://dx.doi.org/10.1051/0004-6361:20021327>`_)
+gave this concept a name: “World Coordinate System” (WCS). Because of this,
+“WCS” and “FITS-WCS” are often treated synonymously, but the concept is of
+broader applicability, as evidenced by the existence of serialization formats
+and Python packages that perform this task (e.g., gWCS, pyast). Hence, we use
+the term “WCS” to refer to the broad concept of WCS, rather than the specific
+FITS-WCS representation and implementation.
 
 For the purposes of this APE, we define WCS transformations as mapping pixels to
 some world coordinate (or the inverse). In our terminology, *pixel* is a
@@ -289,10 +290,12 @@ dimension encoding time-of-observation.
     wcs.world_axis_object_components = [(‘spec’, 0)]
     wcs.world_axis_object_classes  = {‘spec’:(‘astropy.units.pixel’: {})}
 
-Common UCD1+ names
-^^^^^^^^^^^^^^^^^^
+Common UCD1+ names for physical types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The full UCD1+ vocabulary (used for the ``world_physical_types`` attribute)
+As outlined above, the ``world_physical_type`` attribute should include straings
+that fullow the VO UCD1+ vocabulary for defining physical types. The
+`full UCD1+ vocabulary <http://www.ivoa.net/documents/latest/UCDlist.html>`_
 includes a large number of options, but here we summarize some of the most
 common ones that will likely be used::
 
@@ -322,11 +325,12 @@ common ones that will likely be used::
     time                     | Time, generic quantity in units of time or date
     time.epoch               | Instant of time related to a generic event (epoch, date, Julian date, time stamp/tag,...)
 
-The full UCD1+ vocabulary does not include all possible 'terms' that would be
+The full UCD1+ vocabulary does not include all possible type names that would be
 needed to represent **all** WCSes (for example, there are no keywords for
 helioprojective coordinates). In this case, ``world_axis_physical_types`` should
-return ``None`` for those coordinates, and we should work with the International
-Virtual Observatory Alliance (IVOA) to implement new 'terms' as needed.
+return ``None`` for those coordinates.  This should also be taken as a call
+to work with the International Virtual Observatory Alliance (IVOA) to implement
+new type names, which the Astropy Project will facilitate as needed.
 
 High-level Astropy Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -418,11 +422,19 @@ The structure outlined in this API would make that unnecessary by instead having
 a single interface that user code can write against, and only needs to consider
 other details when creating or modifying wcs.
 
-On a more minor note, the primary reason for using a string as the key for the
-dictionary for ``world_axis_object_classes`` (and the corresponding names in
+On a more specific note, the primary reason for using a string as the key for
+the dictionary for ``world_axis_object_classes`` (and the corresponding names in
 world_axis_object_components) is because there might be multiple world axes that
 need to use the same class. Otherwise a simpler solution would have been to use
 the class object *itself* as the key.
+
+Additionally, for ``world_axis_physical_types``, an alternative was considered
+of adopting a much more general set of terms vs UCD1+ such as ``"celestial"``,
+``"spectral"``, etc. And just coming up with the list in this APE (possibly
+using terms that approxmiately align with the STC standard).  But it was decided
+that adopting the VO UCD1+ would be best because it would not lead to Astropy
+needing to maintain a separate "standard" of terminology where one already
+exists.
 
 
 Decision rationale
