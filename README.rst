@@ -30,19 +30,19 @@ Accepted APEs
 15  `An Updated Model for the Affiliated Package Ecosystem`_  2018-May-14 |APE 15 DOI|
 === ========================================================= =========== ============
 
-.. _APE Purpose and Process: https://github.com/astropy/astropy-APEs/blob/master/APE1.rst
-.. _Astropy Release Cycle and Version Numbering: https://github.com/astropy/astropy-APEs/blob/master/APE2.rst
-.. _Configuration: https://github.com/astropy/astropy-APEs/blob/master/APE3.rst
-.. _Astropy Setup Helpers: https://github.com/astropy/astropy-APEs/blob/master/APE4.rst
-.. _Coordinates Subpackage Plan: https://github.com/astropy/astropy-APEs/blob/master/APE5.rst
-.. _Enhanced Character Separated Values table format: https://github.com/astropy/astropy-APEs/blob/master/APE6.rst
-.. _NDData Plan: https://github.com/astropy/astropy-APEs/blob/master/APE7.rst
-.. _Astropy Community Code of Conduct: https://github.com/astropy/astropy-APEs/blob/master/APE8.rst
-.. _Roadmap for Python 3-only support: https://github.com/astropy/astropy-APEs/blob/master/APE10.rst
-.. _Using Cookiecutter for the package-template: https://github.com/astropy/astropy-APEs/blob/master/APE12.rst
-.. _Vision for Astropy Spectroscopic Tools: https://github.com/astropy/astropy-APEs/blob/master/APE13.rst
-.. _A shared Python interface for World Coordinate Systems: https://github.com/astropy/astropy-APEs/blob/master/APE14.rst
-.. _An Updated Model for the Affiliated Package Ecosystem: https://github.com/astropy/astropy-APEs/blob/master/APE15.rst
+.. _APE Purpose and Process: https://github.com/astropy/astropy-APEs/blob/main/APE1.rst
+.. _Astropy Release Cycle and Version Numbering: https://github.com/astropy/astropy-APEs/blob/main/APE2.rst
+.. _Configuration: https://github.com/astropy/astropy-APEs/blob/main/APE3.rst
+.. _Astropy Setup Helpers: https://github.com/astropy/astropy-APEs/blob/main/APE4.rst
+.. _Coordinates Subpackage Plan: https://github.com/astropy/astropy-APEs/blob/main/APE5.rst
+.. _Enhanced Character Separated Values table format: https://github.com/astropy/astropy-APEs/blob/main/APE6.rst
+.. _NDData Plan: https://github.com/astropy/astropy-APEs/blob/main/APE7.rst
+.. _Astropy Community Code of Conduct: https://github.com/astropy/astropy-APEs/blob/main/APE8.rst
+.. _Roadmap for Python 3-only support: https://github.com/astropy/astropy-APEs/blob/main/APE10.rst
+.. _Using Cookiecutter for the package-template: https://github.com/astropy/astropy-APEs/blob/main/APE12.rst
+.. _Vision for Astropy Spectroscopic Tools: https://github.com/astropy/astropy-APEs/blob/main/APE13.rst
+.. _A shared Python interface for World Coordinate Systems: https://github.com/astropy/astropy-APEs/blob/main/APE14.rst
+.. _An Updated Model for the Affiliated Package Ecosystem: https://github.com/astropy/astropy-APEs/blob/main/APE15.rst
 
 .. |APE 1 DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1043886.svg
    :target: https://doi.org/10.5281/zenodo.1043886
@@ -147,7 +147,7 @@ or rejection.  One of the committee members should then:
    "Accepted APEs" table.  Use the DOI link from the previous step.  Add
    corresponding RST link refs for both the DOI link and the new APE.  Preview
    the update and test the links to make sure they are all correct.  Then commit
-   directly to master (or PR if you prefer).
+   directly to main (or PR if you prefer).
 #. Send an email to `astropy-dev <https://groups.google.com/forum/#!forum/astropy-dev/>`_
    announcing the acceptance In general this should just point to the accepted
    APE rather than providing additional decision rationale.
@@ -162,3 +162,16 @@ accepted, etc.), changes can be made directly via PR, but the
 will need to be updated with a new version of the APE (*not* a completely new
 Zenodo entry), by using the "New version" button and then filling out the forms
 as described above.
+
+
+If you locally cloned this repo before 10 Mar 2021
+--------------------------------------------------
+
+The primary branch for this repo has been transitioned from ``master`` to ``main``.  If you have a local clone of this repository and want to keep your local branch in sync with this repo, you'll need to do the following in your local clone from your terminal::
+
+   git fetch --all --prune
+   # you can stop here if you don't use your local "master"/"main" branch
+   git branch -m master main
+   git branch -u origin/main main
+
+If you are using a GUI to manage your repos you'll have to find the equivalent commands as it's different for different programs. Alternatively, you can just delete your local clone and re-clone!
