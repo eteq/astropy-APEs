@@ -98,6 +98,20 @@ group has signed up to implement it should the APE be accepted
 an APE in order to spur others to do work is not going to be received
 well, due to the open-source nature of the Astropy Project.
 
+Standard Track APEs consist of two parts:
+
+* a design document and
+* a reference implementation.
+
+For serious consideration, it is generally recommended that at least a prototype
+implementation be co-developed with the APE, as ideas that sound good in
+principle sometimes turn out to be impractical when subjected to the test of
+implementation. This is not required when too onerous, but some indication of
+implementation practicality is highly recommended by actual code. The best way
+to provide that code is via a GitHub draft pull request to the affected Astropy repository
+(usually `astropy/astropy <https://github.com/astropy/astropy>`_), as
+appropriate.
+
 While attaching additional files to an APE is discouraged, if there are no other
 options, these files could go under the `assets <https://github.com/astropy/astropy-APEs/tree/main/assets>`_
 sub-directory, with the filenames each starting with `ape<n>_` for clarity.
@@ -152,20 +166,6 @@ should be kept on the mailing list as much as possible.
 Once the discussion period has ended, the APE editor should send another e-mail to
 astropy-dev acknwledging any changes to the APE and clarifying that the discussion is closed
 and awaiting Coordination Committee review.
-
-Standard Track APEs consist of two parts:
-
-* a design document and
-* a reference implementation.
-
-For serious consideration, it is generally recommended that at least a prototype
-implementation be co-developed with the APE, as ideas that sound good in
-principle sometimes turn out to be impractical when subjected to the test of
-implementation. This is not required when too onerous, but some indication of
-implementation practicality is highly recommended by actual code. The best way
-to provide that code is via a GitHub draft pull request to the affected Astropy repository
-(usually `astropy/astropy <https://github.com/astropy/astropy>`_), as
-appropriate.
 
 APE Review
 ..........
