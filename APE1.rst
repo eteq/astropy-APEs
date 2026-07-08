@@ -142,10 +142,16 @@ Once the APE editors are happy with the APE, they will:
    Emphasize that the proposal should be discussed on the mailing list, not the
    pull request.  **The discussion period should be at least two weeks.**
 
+#. Add a link to the discussion in the text of the APE itself (for future reference).
+
 As the discussion proceeds, the authors can choose to update the APE at any point via
 new pull requests, which are as before, subject to editorial review before merging.
 If needed, editors should continue to stress that discussions about the substance of the APE
 should be kept on the mailing list as much as possible.
+
+Once the discussion period has ended, the APE editor should send another e-mail to
+astropy-dev acknwledging any changes to the APE and clarifying that the discussion is closed
+and awaiting Coordination Committee review.
 
 Standard Track APEs consist of two parts:
 
