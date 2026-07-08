@@ -69,8 +69,8 @@ There are three kinds of APE:
   or environment used in Astropy development. Any meta-APE is also considered a
   Process APE.
 
-Submitting an APE
-.................
+Preparing an APE
+................
 
 The APE process begins with a new idea for Astropy. It is highly recommended
 that a single APE contain a single key proposal or new idea. Small
@@ -116,6 +116,9 @@ While attaching additional files to an APE is discouraged, if there are no other
 options, these files could go under the `assets <https://github.com/astropy/astropy-APEs/tree/main/assets>`_
 sub-directory, with the filenames each starting with `ape<n>_` for clarity.
 Large files should be hosted externally and linked to the APE instead.
+
+Submitting an APE
+.................
 
 Following a discussion on `astropy-dev <https://groups.google.com/g/astropy-dev>`_,
 the proposal should be submitted as a
